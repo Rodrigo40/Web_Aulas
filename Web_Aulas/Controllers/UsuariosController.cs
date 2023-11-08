@@ -9,22 +9,31 @@ namespace Web_Aulas.Controllers
         public IActionResult Index(int id)
         {
             #region View Index
-            string t2 = string.Format("São: {0}", DateTime.Now.ToLongTimeString());
-            DateTime dia = DateTime.Now;
-            CultureInfo idioma = new CultureInfo("en-GB");
-            for (int d = 1; d <= 7; d++)
-            {
-                t2 = $"Dia: {dia.ToString("D", idioma)} - Hora: {dia.ToString("hh:m:ss", idioma)}";
-            }
-            dynamic texto = DateTime.Now;
+            //string t2 = string.Format("São: {0}", DateTime.Now.ToLongTimeString());
+            //DateTime dia = DateTime.Now;
+            //CultureInfo idioma = new CultureInfo("en-GB");
+            //for (int d = 1; d <= 7; d++)
+            //{
+            //    t2 = $"Dia: {dia.ToString("D", idioma)} - Hora: {dia.ToString("hh:m:ss", idioma)}";
+            //}
+            //dynamic texto = DateTime.Now;
             // Interpolação
 
             ViewData["id"] = id;
-            ViewBag.teste = t2;
+            //ViewBag.teste = t2;
 
-
-            if (id != 10)
+            if (id == 1)
             {
+
+                int[] numeros = new int[5];
+                for (int i = 0; i < numeros.Length; i++)
+                {
+                    numeros[i] = i * 5;
+                }
+                foreach (var item in numeros)
+                {
+                    ViewData["item"] = item;
+                }
                 return View("Error");
             }
             return View();
