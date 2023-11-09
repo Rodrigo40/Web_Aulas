@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Globalization;
+using Web_Aulas.Models;
 
 namespace Web_Aulas.Controllers
 {
@@ -21,12 +22,17 @@ namespace Web_Aulas.Controllers
 
             ViewData["id"] = id;
             //ViewBag.teste = t2;
-
+            Response.Headers.Add("Refresh", "5");
             if (id == 1)
             {
 
-                int[] numeros = new int[5];
-                for (int i = 0; i < numeros.Length; i++)
+                //int[] numeros = new int[5];
+                List<int> numeros = new List<int>();
+                numeros.Add(1);
+                numeros.Add(2);
+                numeros.Add(3);
+                numeros.Add(4);
+                for (int i = 0; i < numeros.Count; i++)
                 {
                     numeros[i] = i * 5;
                 }
@@ -34,14 +40,34 @@ namespace Web_Aulas.Controllers
                 {
                     ViewData["item"] = item;
                 }
+                ViewBag.res = Soma2Numeros(100, 200);
+                Multiplica2Numeros();
+                Pessoa p = new Pessoa();
+                ViewData["id"] = p.Id;
+                ViewData["nome"] = p.Nome;
+                ViewData["sobrenome"] = p.SobreNome;
+                //Response.WriteAsync("<script>alert('Ola, voce não deveria estar aqui!')</script>");
                 return View("Error");
             }
             return View();
             #endregion
+        }
+        public int Soma2Numeros(int valor1, int valor2)
+        {
+            return valor1 + valor2;
+        }
+        private void Multiplica2Numeros()
+        {
+            decimal n1, n2, res;
+            n1 = 100;
+            n2 = 200;
+            res = n1 * n2;
+            ViewBag.soma = res;
         }
         public IActionResult Error()
         {
             return View();
         }
     }
+
 }

@@ -2,3 +2,23 @@
 <p>Houve um erro</p>
 <p>@ViewBag.teste</p>
 <p>@ViewData["item"] </p>
+<p>Somando 100 + 200 = @ViewBag.res </p>
+<p>Multiplicando 100 x 200 = @ViewBag.soma </p>
+<p>@DateTime.Now.ToLongTimeString() </p>
+
+
+<div class="container-fluid">
+    <div class="alert-danger">
+        <ul>
+            <li>
+               ID: @ViewData["id"]
+            </li>
+            <li>
+               Nome: @ViewData["nome"]
+            </li>
+            <li>
+               Sobrenome: @ViewData["sobrenome"]
+            </li>
+        </ul>
+    </div>
+</div>
