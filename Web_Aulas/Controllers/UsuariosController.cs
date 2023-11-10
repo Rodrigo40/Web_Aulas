@@ -43,11 +43,11 @@ namespace Web_Aulas.Controllers
                 ViewBag.res = Soma2Numeros(100, 200);
                 Multiplica2Numeros();
                 Pessoa p = new Pessoa();
-                ViewData["id"] = p.Id;
-                ViewData["nome"] = p.Nome;
-                ViewData["sobrenome"] = p.SobreNome;
+                //ViewData["id"] = p.Id;
+                //ViewData["nome"] = p.Nome;
+                //ViewData["sobrenome"] = p.SobreNome;
                 //Response.WriteAsync("<script>alert('Ola, voce não deveria estar aqui!')</script>");
-                return View("Error");
+                return View("Error", p);
             }
             return View();
             #endregion

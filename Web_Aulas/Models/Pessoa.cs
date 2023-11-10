@@ -1,6 +1,8 @@
-﻿namespace Web_Aulas.Models
+﻿using Web_Aulas.Interface;
+
+namespace Web_Aulas.Models
 {
-    public class Pessoa
+    public class Pessoa : IPessoa
     {
         public Guid Id { get; set; }
         public string Nome { get; set; }    
@@ -11,6 +13,29 @@
             Id = new Guid();
             Nome = "Pedro";
             SobreNome = "Mateus";
+            Andar();
+            Correr();
+            Pular();
+        }
+
+        public string Andar()
+        {
+            return "Andando";
+        }
+
+        public string Correr()
+        {
+            return "Correndo";
+        }
+
+        public string Pular()
+        {
+            return "Pulando";
+        }
+
+        public void Comer()
+        {
+            int Paes = 10;
         }
     }
 }

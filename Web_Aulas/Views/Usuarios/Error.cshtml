@@ -5,20 +5,26 @@
 <p>Somando 100 + 200 = @ViewBag.res </p>
 <p>Multiplicando 100 x 200 = @ViewBag.soma </p>
 <p>@DateTime.Now.ToLongTimeString() </p>
-
+@model Pessoa
 
 <div class="container-fluid">
-    <div class="alert-danger">
-        <ul>
-            <li>
-               ID: @ViewData["id"]
-            </li>
-            <li>
-               Nome: @ViewData["nome"]
-            </li>
-            <li>
-               Sobrenome: @ViewData["sobrenome"]
-            </li>
-        </ul>
+    <div class="card-body">
+        <div class="alert-info border-success">
+            <ul>
+                <li>
+                    ID: @Model.Id
+                </li>
+                <li>
+                    Nome: @Model.Nome
+                </li>
+                <li>
+                    Sobrenome:@Model.SobreNome
+                </li>
+                <li>
+                    Pessoa: @Model.Andar()
+                </li>
+            </ul>
+        </div>
+
     </div>
 </div>
